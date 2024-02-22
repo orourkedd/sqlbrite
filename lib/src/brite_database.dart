@@ -158,6 +158,11 @@ class BriteDatabase extends AbstractBriteDatabaseExecutor
     sendTableTrigger(tables);
     return result;
   }
+
+  @override
+  Future<T> readTransaction<T>(Future<T> Function(sqlite_api.Transaction txn) action) {
+    throw UnimplementedError();
+  }
 }
 
 extension _ToStringExtension on Iterable<String> {
